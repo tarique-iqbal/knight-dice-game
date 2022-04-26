@@ -1,0 +1,23 @@
+{
+    "name": "spreadgroup/knight-dice-game",
+    "description": "Knight dice game...",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tarique Iqbal",
+            "email": "iqbal111@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Game\\": "src/Game/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
