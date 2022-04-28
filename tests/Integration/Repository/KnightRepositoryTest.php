@@ -32,6 +32,35 @@ class KnightRepositoryTest extends TestCase
         $this->assertSame($numberOfKnights, $count);
     }
 
+    public function testRemove()
+    {
+        $numberOfKnights = 10;
+        $deadKnightId = 5;
+        $expectedNumberOfKnights = 9;
+        $knightCircle = new KnightCircle();
+
+        $this->addKnight($numberOfKnights, $knightCircle);
+        $this->knightRepository->remove($deadKnightId, $knightCircle);
+        $count = $this->countKnight($knightCircle);
+
+        $this->assertSame($expectedNumberOfKnights, $count);
+    }
+
+    public function testRemoveInvalidArgumentException()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $numberOfKnights = 10;
+        $deadKnightId = 11;
+        $knightCircle = new KnightCircle();
+
+        for ($i = 1; $i <= $numberOfKnights; $i++) {
+            $this->knightRepository->add($i, $knightCircle);
+        }
+
+        $this->knightRepository->remove($deadKnightId, $knightCircle);
+    }
+
     private function addKnight(int $numberOfKnights, KnightCircle $knightCircle): void
     {
         for ($i = 1; $i <= $numberOfKnights; $i++) {

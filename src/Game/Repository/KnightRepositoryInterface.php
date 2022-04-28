@@ -18,4 +18,11 @@ interface KnightRepositoryInterface
      * @return void
      */
     public function add(int $id, KnightCircle $knightCircle): void;
+
+    /**
+     * @param int $id
+     * @param KnightCircle $knightCircle
+     * @return void
+     */
+    public function remove(int $id, KnightCircle $knightCircle): void;
 }
