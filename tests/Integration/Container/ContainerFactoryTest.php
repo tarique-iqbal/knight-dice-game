@@ -6,6 +6,7 @@ namespace Tests\Integration\Container;
 
 use Game\Container\ContainerFactory;
 use Game\Handler\ExceptionHandler;
+use Game\Repository\KnightRepository;
 use Game\Service\ConfigService;
 use Game\Service\TemplateService;
 use PHPUnit\Framework\TestCase;
@@ -23,5 +24,6 @@ class ContainerFactoryTest extends TestCase
         $this->assertInstanceOf(ConfigService::class, $container['ConfigService']);
         $this->assertInstanceOf(TemplateService::class, $container['TemplateService']);
         $this->assertInstanceOf(ExceptionHandler::class, $container['ExceptionHandler']);
+        $this->assertInstanceOf(KnightRepository::class, $container['KnightRepository']);
     }
 }

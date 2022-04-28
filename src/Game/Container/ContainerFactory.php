@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Game\Container;
 
 use Game\Handler\ExceptionHandler;
+use Game\Repository\KnightRepository;
 use Game\Service\ConfigService;
 use Game\Service\TemplateService;
 use Pimple\Container;
@@ -38,6 +39,10 @@ class ContainerFactory
 
         $container['ConfigService'] = function () {
             return new ConfigService($this->config);
+        };
+
+        $container['KnightRepository'] = function () {
+            return new KnightRepository();
         };
 
         $container['TemplateService'] = function () {
