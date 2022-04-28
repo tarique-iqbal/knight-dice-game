@@ -23,7 +23,8 @@
         "php": "^7.4",
         "ext-xml": "*",
         "ext-mbstring": "*",
-        "pimple/pimple": "^3.5"
+        "pimple/pimple": "^3.5",
+        "symfony/event-dispatcher": "^5.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
