@@ -6,6 +6,7 @@ namespace Game\Container;
 
 use Game\EventSubscriber\KnightDeadSubscriber;
 use Game\Handler\ExceptionHandler;
+use Game\KnightDiceGame;
 use Game\Repository\KnightRepository;
 use Game\Service\ConfigService;
 use Game\Service\GamePlayService;
@@ -66,6 +67,14 @@ class ContainerFactory
 
         $container['TemplateService'] = function () {
             return new TemplateService();
+        };
+
+        $container['KnightDiceGame'] = function (Container $c) {
+            return new KnightDiceGame(
+                $c['KnightRepository'],
+                $c['GamePlayService'],
+                $c['TemplateService']
+            );
         };
 
         $container['ExceptionHandler'] = function (Container $c) {
