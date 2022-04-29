@@ -8,6 +8,7 @@ use Game\Container\ContainerFactory;
 use Game\Handler\ExceptionHandler;
 use Game\Repository\KnightRepository;
 use Game\Service\ConfigService;
+use Game\Service\GamePlayService;
 use Game\Service\TemplateService;
 use PHPUnit\Framework\TestCase;
 use Pimple\Container;
@@ -25,5 +26,6 @@ class ContainerFactoryTest extends TestCase
         $this->assertInstanceOf(TemplateService::class, $container['TemplateService']);
         $this->assertInstanceOf(ExceptionHandler::class, $container['ExceptionHandler']);
         $this->assertInstanceOf(KnightRepository::class, $container['KnightRepository']);
+        $this->assertInstanceOf(GamePlayService::class, $container['GamePlayService']);
     }
 }
